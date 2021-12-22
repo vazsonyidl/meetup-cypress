@@ -1,9 +1,18 @@
 <form [formGroup]="formGroup">
+  <h4>Task tracker</h4>
   <mat-form-field appearance="outline">
     <mat-label>Task</mat-label>
     <input matInput placeholder="Ex. Clean up" type="text" formControlName="todoElement" data-testid="task-input">
   </mat-form-field>
-  <button mat-raised-button type="submit" color="primary" [disabled]="!formGroup.valid" (click)="onAddTodo()" data-testid="add-task-btn">Add task</button>
+  <section>
+    <button mat-raised-button
+            type="submit"
+            color="primary"
+            [disabled]="!formGroup.valid"
+            (click)="onAddTodo()"
+            data-testid="add-task-btn">Add task
+    </button>
+  </section>
 </form>
 
 <app-todo-element *ngFor="let todo of todos" [element]="todo"></app-todo-element>
